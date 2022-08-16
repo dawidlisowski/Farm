@@ -42,7 +42,7 @@ public class FarmDatabase {
         String animalIdAndData = null;
         File barnFile = new File(Config.DATABASE_PATH + animal.getBarn() + ".txt");
 
-        if (!barnFile.exists()){
+        if (!barnFile.exists()) {
             System.out.println("Podana stodoła nie istnieje");
             return;
         }
@@ -87,7 +87,7 @@ public class FarmDatabase {
     public void showBarnContent(String barnName) {
         File barnFile = new File(Config.DATABASE_PATH + barnName + ".txt");
 
-        if (!barnFile.exists()){
+        if (!barnFile.exists()) {
             System.out.println("Podana stodoła nie istnieje");
             return;
         }
@@ -110,18 +110,6 @@ public class FarmDatabase {
 
         rewriteFile(Config.ANIMALS_FILE);
 
-//        StringBuilder newLines = new StringBuilder();
-//
-//        for (String line : lines) {
-//            newLines.append(line).append("\r\n");
-//        }
-//
-//        try {
-//            Files.write(Config.ANIMALS_FILE.toPath(), newLines.toString().getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
         if (animalToDelete != null) {
             deleteAnimalFromBarn(animalToDelete);
         }
@@ -136,18 +124,6 @@ public class FarmDatabase {
         lines.removeIf(s -> s.equals(animal));
 
         rewriteFile(barnFile);
-
-//        StringBuilder newLines = new StringBuilder();
-//
-//        for (String line : lines) {
-//            newLines.append(line).append("\r\n");
-//        }
-//
-//        try {
-//            Files.write(barnFile.toPath(), newLines.toString().getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
     }
 
     private void rewriteFile(File file) {
@@ -178,7 +154,7 @@ public class FarmDatabase {
         File barnFile = new File(Config.DATABASE_PATH + barnName + ".txt");
         String barnToDelete = null;
 
-        if (!barnFile.exists()){
+        if (!barnFile.exists()) {
             System.out.println("Podana stodoła nie istnieje");
             return;
         }
@@ -245,7 +221,7 @@ public class FarmDatabase {
         stringsToAnimalList();
 
         for (Animal animal : animalList) {
-            if (animal.isVaccinated()){
+            if (animal.isVaccinated()) {
                 System.out.println(animal);
             }
         }
